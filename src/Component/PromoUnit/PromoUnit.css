@@ -1,0 +1,32 @@
+.promoUnit1 a,
+.promoUnit2 a,
+.promoUnit3 a,
+.promoUnit4 a
+{
+    color: #000;
+    font-size: 13px;
+    text-decoration: none;
+}
+.promoUnit i.fas.fa-truck,
+.promoUnit i.fas.fa-check,
+.promoUnit i.fas.fa-star,
+.promoUnit i.fas.fa-shopping-cart{
+    color: #0091ac;
+    font-size: 15px;
+    margin-right: 2px;
+}
+.promoUnit2 a{
+    cursor: auto;
+}
+.promoUnit1 a:hover,
+.promoUnit3 a:hover,
+.promoUnit4 a:hover{
+text-decoration: underline;
+}
+@media only screen and (max-width: 992px) {
+    .promoUnit2,
+.promoUnit3,
+.promoUnit4 {
+    display: none;
+}
+}

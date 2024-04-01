@@ -1,0 +1,114 @@
+i.fas.fa-check {
+    position: relative;
+    /* bottom: 35px; */
+    font-size: 20px;
+    /* border: 1px solid; */
+    padding: 5px;
+    bottom: 20px;
+    color: #000;
+    left: 85px;
+}
+
+.newsletter {
+    background-color: #0091c0;
+}
+
+.newsletter .container-fluid .row .col-md-6 p {
+    color: #303030;
+}
+
+.newsletter .container-fluid .row .col-md-6 p a {
+    color: #303030;
+}
+
+.newsletter .container-fluid .row .col-md-6 .newsletter-content i.fas.fa-envelope {
+    font-size: 20px;
+}
+
+.newsletter .container-fluid .row .col-md-6 h4 {
+    font-size: 16px;
+}
+
+.newsletter .container-fluid .row .col-md-6 .newsletter-content {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: #f2f2f2;
+}
+
+.newsletter .container-fluid .row .col-md-6 .newsletter-content2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0;
+    color: #f2f2f2;
+}
+
+.newsletter .container-fluid .row .col-md-6 .newsletter-content .newsLetterBox input.form-control.me-2 {
+    position: relative;
+    top: 12px;
+    width: 100%;
+}
+
+i.fab.fa-facebook-f,
+i.fab.fa-twitter,
+i.fab.fa-instagram,
+i.fab.fa-pinterest-p,
+i.fab.fa-youtube {
+    color: #f2f2f2;
+    font-size: 16px;
+    padding: 16px;
+    border-radius: 50%;
+}
+
+i.fab.fa-facebook-f:hover {
+    background: #4267b2;
+}
+
+i.fab.fa-twitter:hover {
+    background: #1da1f2;
+}
+
+i.fab.fa-instagram:hover {
+    background: #e1306c;
+}
+
+i.fab.fa-pinterest-p:hover {
+    background: #e60023;
+}
+
+i.fab.fa-youtube:hover {
+    background: #ff0000;
+}
+
+.newsletter-content2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0;
+}
+
+@media only screen and (max-width:766px) {
+    .newsletter .container-fluid .row .col-md-6 .newsletter-content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        color: #f2f2f2;
+    }
+
+    .newsletter-content {
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .newsletter-content2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .newsletterSocialIcon {
+        display: flex;
+        flex-direction: column;
+    }
+}

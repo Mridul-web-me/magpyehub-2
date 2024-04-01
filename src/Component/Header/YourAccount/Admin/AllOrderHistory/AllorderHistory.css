@@ -1,0 +1,45 @@
+.orderPrice,
+.orderStatus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.orderPrice p,
+.orderStatus p {
+    margin: 0 0 0 10px;
+}
+
+.quantityTag,
+.priceTag,
+.statusTag {
+    display: none;
+}
+
+@media only screen and (max-width: 760px) {
+
+    .quantity,
+    .price,
+    .subTotal,
+    .status {
+        display: none;
+    }
+
+    .orderedQuantity {
+        display: flex;
+    }
+
+    .quantityTag,
+    .priceTag,
+    .statusTag {
+        display: block;
+    }
+
+    .orderPrice,
+    .orderStatus {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+}

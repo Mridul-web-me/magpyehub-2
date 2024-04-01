@@ -1,0 +1,13 @@
+.filterItem {
+    text-align: start;
+}
+
+.filterItem a {
+    text-decoration: none;
+    color: #606060;
+    font-size: 16px;
+}
+
+.filterItem a:hover {
+    text-decoration: underline;
+}

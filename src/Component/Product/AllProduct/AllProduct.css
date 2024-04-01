@@ -1,0 +1,7 @@
+.groupButton{
+    visibility: hidden;
+}
+
+.productCard:hover .groupButton{
+    visibility: visible;
+}

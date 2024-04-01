@@ -1,0 +1,16 @@
+.tabContainer{
+    display: none;
+}
+@media only screen and (max-width: 992px) {
+    .loginForm{
+        display: none;
+    }
+    .nav.nav-pills {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.tabContainer{
+    display: block;
+}
+}

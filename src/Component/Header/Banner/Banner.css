@@ -1,0 +1,23 @@
+
+.banner{
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden;
+}
+.banner img.d-block.w-100 {
+    z-index: 1;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: aqua;
+    font-size: 20px;
+}
+.slick-dots li button:before{
+    font-size: 20px;
+    color: aqua;
+}
+/* ul.slick-dots {
+    position: relative;
+    bottom: 40px;
+} */

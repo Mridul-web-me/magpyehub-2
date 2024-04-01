@@ -1,0 +1,14 @@
+.pagination Button{
+    border: 1px solid;
+    margin: 0 5px;
+}
+
+.pagination .selected{
+    background: #0091c0;
+    color: #fff;
+}
+.pagination{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
