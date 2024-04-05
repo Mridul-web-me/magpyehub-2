@@ -25,7 +25,7 @@ const SearchResult = () => {
     console.log(product);
   }, [searchText]);
 
-  const {} = useForm < FieldValues > {};
+  // const {} = useForm < FieldValues > {};
 
   return (
     <div>
