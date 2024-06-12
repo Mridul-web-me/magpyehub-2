@@ -32,12 +32,19 @@ const Home = () => {
       </Helmet>
 
       {loading ? (
-        <div className="text-center" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-          {' '}
-          <Spinner animation="grow" variant="info" />
-          <Spinner animation="grow" variant="info" />
-          <Spinner animation="grow" variant="info" />
-        </div>
+        <>
+          <div className="text-center" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            {' '}
+            <div>
+              <Spinner animation="grow" variant="info" />
+              <Spinner animation="grow" variant="info" />
+              <Spinner animation="grow" variant="info" />
+            </div>
+            <h2>
+              The server is sleeping. Wait a few seconds or <span style={{ color: 'blueviolet' }}>RELOAD</span> the page.{' '}
+            </h2>
+          </div>
+        </>
       ) : (
         <>
           <Header></Header>

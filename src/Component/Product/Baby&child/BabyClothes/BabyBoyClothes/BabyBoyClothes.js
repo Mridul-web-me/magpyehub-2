@@ -497,14 +497,12 @@ const BabyBoyClothes = () => {
                 ) : (
                   <Row xs={1} md={4} className="g-4">
                     {filter.map(product => (
-                      <>
-                        <AllProduct
-                          key={product._id}
-                          product={product}
-                          handleAddToCart={handleAddToCart}
-                          // pageCount={pageCount}
-                        ></AllProduct>
-                      </>
+                      <AllProduct
+                        key={product._id}
+                        product={product}
+                        handleAddToCart={handleAddToCart}
+                        // pageCount={pageCount}
+                      ></AllProduct>
                     ))}
                   </Row>
                 )}
