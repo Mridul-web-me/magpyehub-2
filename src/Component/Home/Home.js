@@ -24,6 +24,12 @@ const Home = () => {
         setLoading(false);
       });
   }, []);
+
+  if (products.length === null) {
+    setTimeout(() => {
+      window.location.reload();
+    }, 2000);
+  }
   return (
     <div>
       <Helmet>
@@ -40,9 +46,9 @@ const Home = () => {
               <Spinner animation="grow" variant="info" />
               <Spinner animation="grow" variant="info" />
             </div>
-            <h2>
+            {/* <h2>
               The server is sleeping. Wait a few seconds or <span style={{ color: 'blueviolet' }}>RELOAD</span> the page.{' '}
-            </h2>
+            </h2> */}
           </div>
         </>
       ) : (

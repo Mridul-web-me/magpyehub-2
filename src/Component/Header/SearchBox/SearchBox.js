@@ -7,12 +7,18 @@ const SearchBox = () => {
   // const { searchText } = useParams();
 
   const [searchProducts, setSearchProducts] = useState('');
-  useEffect(() => {
-    axios
-      .get(`https://magpyehub-server.onrender.com/search?search=${searchProducts}`)
-      // .then(res => res.json())
-      .then(data => setProducts(data.data));
-  }, [searchProducts]);
+  const controller = new AbortController();
+  const signal = controller.signal;
+  useEffect(
+    () => {
+      axios
+        .get(`https://magpyehub-server.onrender.com/products`)
+        // .then(res => res.json())
+        .then(data => setProducts(data.data));
+    },
+    [searchProducts],
+    { signal }
+  );
 
   const handleSearchField = e => {
     e.preventDefault();
