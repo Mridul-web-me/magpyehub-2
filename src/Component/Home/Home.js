@@ -13,23 +13,31 @@ import { Helmet } from 'react-helmet';
 import { Spinner } from 'react-bootstrap';
 
 const Home = () => {
-  const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Set a timeout to reload the page after 15 seconds
+    const reloadTimeout = setTimeout(() => {
+      if (loading) {
+        window.location.reload();
+      }
+    }, 15000);
+
     fetch(`https://magpyehub-server.onrender.com/products/`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.products);
         setLoading(false);
+        clearTimeout(reloadTimeout);
+      })
+      .catch(err => {
+        console.error('Failed to fetch products:', err);
+        setLoading(false);
       });
-  }, []);
 
-  if (products.length === null) {
-    setTimeout(() => {
-      window.location.reload();
-    }, 2000);
-  }
+    return () => clearTimeout(reloadTimeout);
+  }, [loading]);
   return (
     <div>
       <Helmet>
