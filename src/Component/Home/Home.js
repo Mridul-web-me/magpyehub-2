@@ -15,12 +15,13 @@ import { Spinner } from 'react-bootstrap';
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
 
   useEffect(() => {
-    // Set a timeout to reload the page after 15 seconds
+    // Set a timeout to reload the page after 15 seconds if it's the first load
     const reloadTimeout = setTimeout(() => {
-      if (loading) {
-        window.location.reload();
+      if (loading && isFirstLoad) {
+        window.location.href = window.location.href;
       }
     }, 15000);
 
@@ -29,15 +30,19 @@ const Home = () => {
       .then(data => {
         setProducts(data.products);
         setLoading(false);
-        clearTimeout(reloadTimeout);
+        setIsFirstLoad(false); // Data has been loaded at least once
+        clearTimeout(reloadTimeout); // Clear the timeout if products are loaded
       })
       .catch(err => {
         console.error('Failed to fetch products:', err);
-        setLoading(false);
+        setLoading(false); // Handle error state
       });
 
+    // Cleanup function to clear the timeout if the component unmounts
     return () => clearTimeout(reloadTimeout);
-  }, [loading]);
+  }, [loading, isFirstLoad]);
+
+  console.log(products.length);
   return (
     <div>
       <Helmet>
@@ -46,7 +51,7 @@ const Home = () => {
       </Helmet>
 
       {loading ? (
-        <>
+        isFirstLoad ? (
           <div className="text-center" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             {' '}
             <div>
@@ -54,11 +59,15 @@ const Home = () => {
               <Spinner animation="grow" variant="info" />
               <Spinner animation="grow" variant="info" />
             </div>
-            {/* <h2>
-              The server is sleeping. Wait a few seconds or <span style={{ color: 'blueviolet' }}>RELOAD</span> the page.{' '}
-            </h2> */}
           </div>
-        </>
+        ) : (
+          <div className="text-center" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            {' '}
+            <p>
+              The server is sleeping. Wait a few seconds or <button onClick={() => window.location.reload()}>RELOAD</button> the page.
+            </p>
+          </div>
+        )
       ) : (
         <>
           <Header></Header>
