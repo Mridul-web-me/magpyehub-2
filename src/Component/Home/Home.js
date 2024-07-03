@@ -50,8 +50,8 @@ const Home = () => {
         <meta name="description" content="This is Magpyehub Online Shop" />
       </Helmet>
 
-      {loading ? (
-        isFirstLoad ? (
+      {loading && (
+        <>
           <div className="text-center" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             {' '}
             <div>
@@ -59,16 +59,12 @@ const Home = () => {
               <Spinner animation="grow" variant="info" />
               <Spinner animation="grow" variant="info" />
             </div>
+            <p style={{ fontSize: '20px', marginTop: '10px' }}>The server is sleeping. Please wait a few seconds. Thank you!</p>
           </div>
-        ) : (
-          <div className="text-center" style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            {' '}
-            <p>
-              The server is sleeping. Wait a few seconds or <button onClick={() => window.location.reload()}>RELOAD</button> the page.
-            </p>
-          </div>
-        )
-      ) : (
+        </>
+      )}
+
+      {!loading && (
         <>
           <Header></Header>
           <PromoUnit></PromoUnit>
